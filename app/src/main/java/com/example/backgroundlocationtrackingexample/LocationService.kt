@@ -1,5 +1,6 @@
 package com.example.backgroundlocationtrackingexample
 
+import android.annotation.SuppressLint
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
@@ -42,6 +43,7 @@ class LocationService : Service() {
         return super.onStartCommand(intent, flags, startId)
     }
 
+    @SuppressLint("NotificationPermission")
     private fun start(){
         val notification = NotificationCompat.Builder(this,"location")
             .setContentTitle("Tracking Location...")
